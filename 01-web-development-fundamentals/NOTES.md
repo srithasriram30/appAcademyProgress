@@ -175,6 +175,8 @@ no trash bin for shell
 
 # HTML & CSS Fundamentals
 
-##
+## CSS Basics
 
--
+- selectors can be the following basic types: type,class, ID, universal, attribute
+- compund class (ie more than one class) => have space between classes in HTML
+- CSS specificity: IDs, -> class -> tags (ie, rules for h1 and p has > specificity than just p) -> which comes first in CSS file
