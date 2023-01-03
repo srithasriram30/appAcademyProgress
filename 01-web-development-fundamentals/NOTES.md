@@ -120,3 +120,59 @@ There are also more topics that are new to me, and I hope that I would be able t
 - DRY (Don't Repeat Yourself)
 
 ### Basic Loops
+
+- two fundamental types: while and for
+
+### Arrays
+
+- can mix data types
+
+- find element using indexOf()
+
+- concat array using Array.concat()
+
+- Array.push() => add element at end, Array.pop() => remove element at end
+
+- Empty array: `let array = []`
+
+# Setting Up Your Environment I
+
+### Basic Terminal Navigation
+
+- impt commands: pwd, ls, cd
+
+### Moving around directories
+
+- go to root: `cd /`
+
+- commands have flags => can make them do different things
+
+- arguments: specify which files/folders command should operate on
+
+### Working with Files and directories
+
+mkdir => create directory
+
+mv => move files
+
+`mv filename1 filename2`
+
+cp => same syntax as mv, but copies files instead
+
+rm => removes file, use `rm -i` for confirmation; rmdir => remove directories
+
+*, ? => wildcards; * for zero or more matches, ? for one char
+
+no trash bin for shell
+
+
+## Intro to Source Control
+
+### Source Control with Github
+
+- create new branch: `git checkout -b "branchName"`
+- go back to old branch: `git checkout "branchName"`
+
+# HTML & CSS Fundamentals
+
+##
