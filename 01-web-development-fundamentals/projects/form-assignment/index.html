@@ -4,27 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        div{
-            margin: 1em 0;
-        }
-
-        fieldset {
-            width: 60%;
-            margin: auto;
-            padding: 0 1em;
-
-        }
-
-        h1 {
-            margin-left: 1em;
-        }
-
-        textarea{
-            width: 100%;
-        }
-    </style>
     <title>Add User</title>
+    <link rel="stylesheet" href="layout.css">
 </head>
 <body>
     <h1>Add User</h1>
@@ -32,31 +13,41 @@
     <form action="/addUser" method="post">
         <fieldset>
             <legend>Add User</legend>
-            <div>
+            <div class="formField">
                 <label for="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName">
             </div>
 
-            <div>
+            <div class="formField">
                 <label for="lastName">Last Name</label>
                 <input type="text" name="lastName" id="lastName">
             </div>
 
-            <div>
+            <div class="formField">
                 <label for="emailAddr">Email</label>
                 <input type="email" name="emailAddr" id="emailAddr">
             </div>
 
-            <div>
-                <label for="status">Status</label>
-                <select name="status" id="status">
-                    <option value="student">Student</option>
-                    <option value="instrutor">Instructor</option>
-                    <option value="guest">Guest</option>
-                </select>
+
+
+            <div class="row">
+                <div class="formField">
+                    <label for="status">Status</label>
+                    <select name="status" id="status">
+                        <option value="student">Student</option>
+                        <option value="instrutor">Instructor</option>
+                        <option value="guest">Guest</option>
+                    </select>
+                </div>
+
+                <div class="formField">
+                    <label for="currentDate">Current Date</label>
+                    <input type="date" name="currentDate" id="currentDate">
+                </div>
             </div>
 
-            <div>
+
+            <div class="formField">
                 <p>Choose your favourite programing language:</p>
 
                 <input type="radio" name="language" id="html">
@@ -69,36 +60,31 @@
                 <label for="js">JavaScript</label>
             </div>
 
-            <div>
+            <div class="formField">
                 <label for="comments">Comments</label>
                 <textarea name="comments" id="comments" cols="30" rows="10">
                 </textarea>
             </div>
 
-            <div>
-                <label for="currentDate">Current Date</label>
-                <input type="date" name="currentDate" id="currentDate">
+            <div class="row">
+                <div class="formField">
+                    <input type="checkbox" name="newsletter" id="newsletter">
+                    <label for="newsletter">Signup for newsletter</label>
+                </div>
+
+                <div class="formField">
+                    <input type="checkbox" name="tnc" id="tnc">
+                    <label for="tnc">Agree to terms and conditions</label>
+                </div>
             </div>
 
-            <div>
-                <input type="checkbox" name="newsletter" id="newsletter">
-                <label for="newsletter">Signup for newsletter</label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="tnc" id="tnc">
-                <label for="tnc">Agree to taerms and conditions</label>
-            </div>
-
-            <div>
+            <div class="formField">
                 <button type="submit">Submit</button>
             </div>
         </fieldset>
-
-
-
-
     </form>
+
+
 
 </body>
 </html>

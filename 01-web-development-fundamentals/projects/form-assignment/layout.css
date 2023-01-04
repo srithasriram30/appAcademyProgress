@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text],
+input[type=date],
+input[type=email],
+select,
+textarea{
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.formField{
+    margin: 0.5em;
+    text-align: center;
+}
+
+legend {
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    margin-left: 1em;
+}
