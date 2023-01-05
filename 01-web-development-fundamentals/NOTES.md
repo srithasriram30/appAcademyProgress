@@ -180,3 +180,94 @@ no trash bin for shell
 - selectors can be the following basic types: type,class, ID, universal, attribute
 - compund class (ie more than one class) => have space between classes in HTML
 - CSS specificity: IDs, -> class -> tags (ie, rules for h1 and p has > specificity than just p) -> which comes first in CSS file
+
+# Intermediate HTML & CSS
+## HTML Forms
+
+- `form elemnet`: action => where form is submitted; method=> get or post, most often post
+
+- no closing tag for `input
+
+- `fieldset` => group elements
+
+- `legend` => gives title or caption to fieldset
+
+## Intermediate CSS
+
+### Box Model
+
+- for elements w/ display block:
+    - fill available space
+    - each box appears on new line
+    - css width and height
+    - padding, margin and border pushes away other elements
+
+- for elements w/ display inline:
+    - each box appears next to each other in a single line until space is filled up
+    - css width and height don't apply
+    - padding, margin and border aplly, but doesn't push away other elements
+
+- standard box model => width and height are for content
+- box-sizing: if border-box, width and height include padding, border & margin; if content-box, width and height is only for content
+
+- inline-block => allows block elements to be laid side-by-side
+
+- padding property:
+    - `padding: 3em` => all four sides
+    - `padding: 20% 5%` => top&bottom, left&right
+    - `padding: 15px 10px 20px` => top, left&right, bottom
+    - `padding: 0 10px 2em 1em` => top, right, bottom, left (clockwise)
+
+- elements han inherit attributes from parents
+
+- border => border-width, border-style, border-color
+
+- margin (properties same as padding)
+
+- `margin: auto` => horizontally center element
+
+### CSS Positioning
+
+- five possible values: static, relative, absolute, fixed, sticky
+- all except sticky used together with `top`, `right`, `bottom`, `left`
+- sticky needs at least one to be set
+
+#### Static
+
+- default postion; will appear according to page flow
+- not used much; unless used for overriding
+
+#### Relative
+
+- remains in original postion, amd can be offset using properties
+- overlapping elements order can be set by z-index
+
+#### Absolute
+
+- removed from page flow
+- positioned in relation to closest positioned ansector => need to container position set to relative
+- if container is not set to relative, element will be positioned w.r.t document
+
+#### Fixed
+
+- removed from page flow
+- positioned w.r.t html doc
+- will be in same position as screen scrolls
+
+#### Sticky
+
+- remains in original position in page flow
+- positioned w.r.t closest block-level ansector and any scrolling ansector
+- starts w/ relative position, once past it's position, it will stop scrolling
+- useful for headers in scrollable lists
+
+### CSS Transtions
+
+-provide a way to control animation speed
+
+- has these components: `transition-property`, `transition-duration`, `transition-delay`
+
+### CSS Animations
+
+- like transitions, but with their own properties
+- can move element w/o hovering over it or clicking it

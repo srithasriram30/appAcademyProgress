@@ -1,0 +1,72 @@
+body{
+    margin: 0 10%;
+}
+
+.articleImage {
+    height: 25em;
+    margin: auto;
+    display: block;
+}
+
+.headerbar,
+.navbar,
+.infobar,
+.articlebar,
+.bottomnav{
+    display:flex;
+    margin: 0.75em 0;
+}
+
+
+.headerbar,
+.infobar,
+.bottomnav{
+    justify-content: space-between;
+}
+
+.articlebar{
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+.navbar{
+    justify-content: space-around;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0.5em 0;
+}
+
+.headerbar div{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.infobar div {
+    margin: 0.5em 0;
+}
+
+.bottomnav span{
+    padding: 0 0.5em;
+}
+
+.logo{
+    background-size: cover;
+    background-image: url("https://appacademy.github.io/styleguide/assets/logo/logo-full-red-1000.png");
+    height: 2.5em;
+    width: 12em;
+    margin: 1em;
+
+}
+
+img {
+    height: 1.5em;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    color: blue;
+}
