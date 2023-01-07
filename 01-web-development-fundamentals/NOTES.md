@@ -271,3 +271,66 @@ no trash bin for shell
 
 - like transitions, but with their own properties
 - can move element w/o hovering over it or clicking it
+
+# Setting Up Your Environment II
+
+## Computer Analysis
+
+Operating System Version:
+
+    Status: Recomended
+
+Processor:
+
+    Status: Recomneded
+
+Memory/RAM:
+
+    Status: Recomended
+
+Storage Free:
+
+    Status: Recommeded
+
+Monitor:
+
+    Status: Recomended
+
+Webcam:
+
+    Status: Recomended
+
+Speakers / Microphone:
+
+    Status: Recomdeded
+
+Internet Bandwidth:
+
+    Status: Recomended
+
+
+### Git Branching
+
+- git merge branchname => will merge branchName onto current branch
+
+- git rebase branchName => will rebase current branch onto branchName
+
+- git checkout commitName => will attach HEAD to commit
+
+- git branch -f branchName HEAD~i => moves by force branchName i parents behind HEAD
+
+- git reset vs git revert => reset moves branch ref backwards (local); revert (remote); creates new commit that undoes changes in pervious commit
+
+git reset HEAD~1; git revert HEAD
+
+git cherry-pick commit1 commit2 .. => picks and coses the commits yo copy to head
+
+use rebase with -i to open interative command to pick commits
+
+eg: git rebase -i HEAD~4
+
+git tag v1 C1 => tags C1 as v1
+
+if commit is not added as argument, tag is added to where HEAD is
+
+git describe < ref > => can resolve anything into a commit

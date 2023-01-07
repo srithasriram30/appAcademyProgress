@@ -1,0 +1,6 @@
+[submodule "01-web-development-fundamentals/projects/spaceTourismSolution/spaceTourismSolution"]
+	path = 01-web-development-fundamentals/projects/spaceTourismSolution/spaceTourismSolution
+	url = https://github.com/srithasriram30/spaceTourismSolution.git
+[submodule "01-web-development-fundamentals/projects/mergeConflictsPractice"]
+	path = 01-web-development-fundamentals/projects/mergeConflictsPractice
+	url = https://github.com/srithasriram30/mergeConflictsPractice.git
