@@ -334,3 +334,18 @@ git tag v1 C1 => tags C1 as v1
 if commit is not added as argument, tag is added to where HEAD is
 
 git describe < ref > => can resolve anything into a commit
+
+# Intermediate Javascript
+
+## Getting Started with Node.js
+
+- Node.js released in 2009 to execute js in portable env
+
+- to run REPL, just type `node` in command line
+
+- to run js files: `node < filename >`
+
+## HTML/CSS Unit tests
+
+- uses cypress framework
+- install with `npm install`
