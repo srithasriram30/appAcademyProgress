@@ -19,6 +19,10 @@ multiplyByFive(5); // returns 25
 ***********************************************************************/
 
 function dynamicMultiply(num) {
+
+  return function multiply(num2){
+    return num*num2;
+  }
   // Your code here
 }
 

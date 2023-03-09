@@ -15,7 +15,7 @@
 }
 
 .formRow{
-    margin: 0.5em 0;
+    margin: 1.5em 0;
 }
 
 .card{
@@ -23,16 +23,34 @@
     border-radius: 10px;
 }
 
-img{
-    margin: 0.5em 0;
+.imgDiv,
+.formDiv{
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
 }
 
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.card h2{
+    text-align: center;
+}
 
 input[type=text],
 input[type=email],
 textarea{
     width: 100%;
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
 form {

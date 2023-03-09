@@ -248,3 +248,121 @@ Scope chaining: inner scope does not have access to vars in outer scope
   console.log(counter2()); // => 1
 
   - can also pass arguments inplicitly
+
+# Recursion
+
+## Recusion
+ ### Call Stack
+
+ - struture that JS uses to keep track of fn calls
+
+ - new items: top of pile, items also removed from top of pile (LIFO)
+
+ - JS is single threaded
+
+ - event can only be handled when call stack is empty
+
+### Recusion basics
+
+- base case => data in fn is processed w/o any additional recursion
+
+- recursive case => fn recurses
+
+### Default parameters
+
+- default parameter - declared in fn signature like regular parameter, except it is given a default value
+
+- used to add flags to fn
+
+- also used to receieve data from intermediate calculations
+
+# IIFEs and Recalls
+
+## Hoisting
+
+### IIFEs
+
+- Immediately-Invoked Function Expression
+
+- called immediatly after being defined
+
+(function() {
+  statements;
+})();
+
+- eg:
+
+(function() {
+  console.log("run me immediately!");
+})(); // => 'run me immediately!'
+
+- Keeps fns and vars private
+
+- cannot be inoved again => no other part of program can access
+
+
+## Recalls
+
+### Primitive Data Types in Depth
+
+- primitive data types : boolean, null. undefined, number, string, symbol, bigint
+
+- Reference type: object
+
+- primitive data types cannot have methods
+
+# Asynchronicity
+
+## Async JavaScript
+
+### Threading
+
+- thread of execution (thread) => sequence of commands
+
+- order of commands is critical to task
+
+- single threaded => one command can be processed at a time
+
+- multi-threaded => multiple commands can be processed at a time
+
+### Message Queue and Event Loop
+
+- Event loop: call stack & message queue
+- msg q: handle events; FIFO
+
+
+### Intro to Asyc JS
+
+- synchronus: inherent order among commands; order is garunteed
+- asyn: no garuntee of total order of code; can execute another command even if current one is not completed
+- eg: setTimeout fn
+
+### Timeouts amd Intervals
+
+- setTimeout => prints cb after ms given in fn
+- time specified is min amt, can be longer
+- cancel time, use `clearTimeout(timeoutID)`
+- setInterval: executes cb repeatedly at given intervals
+
+### User Input with Readline
+
+- adding readline: `const readline = require("readline");`
+
+- next, create interface to talk to user:
+
+`
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+`
+
+- getting user input:
+
+rl.question("What's up, doc? ", answer => {
+  // print their response
+  console.log("you responded: " + answer);
+  // close the interface
+  rl.close();
+});
