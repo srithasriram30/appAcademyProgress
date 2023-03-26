@@ -1,6 +1,6 @@
 .nav{
     display: flex;
-    border: 1px solid black;
+    border: 1px solid #304148;
     justify-content: flex-end;
     width: 100;
 }
@@ -21,12 +21,17 @@
 .card{
     width: 30%;
     border-radius: 10px;
+    border: 2px solid #304148;
+    background-color: #E9EDEF;
+    color: #304148;
+    border-radius: 5px;
+    padding: 0.5em;
 }
 
 .imgDiv,
 .formDiv{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 1em 0;
 }
 
@@ -34,16 +39,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
 }
 
-.card {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 0.5em;
-}
+
 
 .card h2{
     text-align: center;
+    color: #284566;
+}
+
+.galleryItem {
+    justify-self: center;
 }
 
 input[type=text],
@@ -56,4 +63,38 @@ textarea{
 form {
     width: 65%;
 
+}
+
+img {
+    height: 20em;
+    margin: 2em 0;
+    border: 2px solid #304148;
+    border-radius: 5px;
+}
+body {
+    font-family: 'Lora', serif;
+    background-color: #F3F1EE;
+    color: #304148;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    color: #3385B6;
+}
+
+li{
+    padding: 0.5em 0;
+}
+
+fieldset {
+    background-color: #E9EDEF;
+}
+
+legend {
+    border: 2px solid #304148;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: #F3F1EE;
+    color: #284566;
 }
