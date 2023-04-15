@@ -249,3 +249,57 @@ console.log(fellowshipOfTheRing.getInformation());
 - `console.error` to make errors more noticable
 - `try ... catch` can be combines with JS built-in errors
 - one more block in try-catch: `finally`; code in `finally` will always run
+
+## Testing
+
+### Testing Pryamid
+
+- Why test?
+  - To make sure it works
+  - Increase flexibility and reduce fear (of code)
+  - Make collaboration easier
+  - produce documentation
+
+- Testing pyramid:
+  - Unit test => smallest unit of testing; ensures each piece works before integrating; fastest tests to write and run
+  - Integration testing => test interactions between two pieces of application
+  - End-toend tests => highest level of testing, will test enitre application; slowest to write and run
+
+### What is TDD?
+
+- practice of writing tests before writing code is test-driven development (TDD)
+
+- Motivations:
+  -Ensures Code works
+    - code written to pass tests is garunteed to be testable
+    - code w/ pre-written tests allows other devs to add and test new code while ensure nothing else breaks
+  - Only req code is written
+    - help reduce bloated uneeded functionality
+    - TDD and YAGNI ("you ain't gonna need it") go hand in hand
+  - Enforce modularity
+    - dev will write each chunk to be modular and capable of individual testing
+  - better understanding of what code should be doing
+
+- Steps: Red, Green, Refactor
+
+- Red: Write tests that fail
+- Green: Write min code to ensure tests pass
+- Refactor: Refactor code written
+
+## Unit Testing
+
+### Unit Testing w/ Mocha and Chai
+
+- install: `npm install mocha`, `npm install chai`
+
+- mocha: test framework, specialises in running tests and presenting them in user firendly way
+
+- chai: assertion library that perform actual test comparisions
+
+### Determining Common Test Cases
+
+- two main reason for tests specs => specify what should be built & prevent ppl from breaking code further in dev
+
+- coming up with test cases forces you to understand problem
+
+-also need to test edge cases
