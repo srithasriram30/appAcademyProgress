@@ -225,3 +225,27 @@ console.log(fellowshipOfTheRing.getInformation());
 - arrow fn do not have inherent bindings to a `this` object based on context
 
 - can define class methods as arrow functions
+
+
+# TDD Basics
+
+## Error Handling
+
+### JS Error Types
+
+- Several types of errors in JS
+
+- `SyntaxError` => error in syntax of code eg, using funtion istead of function
+
+- `ReferanceError` => referencing a variable that doesn't exist (either in scope or at all)
+
+- `TypeError` => perform operation on wrong type or modify a value that cannot be changed
+
+### Error Handling
+
+- Use `Error` constructor to create new errors
+- use `throws` to throw new error
+-`throws` will stop program execution; use `try ... catch` to allow program to continue after error
+- `console.error` to make errors more noticable
+- `try ... catch` can be combines with JS built-in errors
+- one more block in try-catch: `finally`; code in `finally` will always run
