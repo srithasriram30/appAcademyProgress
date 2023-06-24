@@ -303,3 +303,7 @@ console.log(fellowshipOfTheRing.getInformation());
 - coming up with test cases forces you to understand problem
 
 -also need to test edge cases
+
+## Custom Errors and ES5 Classes
+
+###
