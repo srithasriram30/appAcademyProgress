@@ -62,3 +62,25 @@
 - RAM is much faster than drive storage, also more expensive per bit
 
 ### Turing Machine
+
+- modern computers are a form of turning machines
+- can compute anything a modern computer can
+- code always gets translated into machine instructions before execution
+- memory: long strip of cells; cells can be 1 or 0
+- cells divided into chunks called words (default size of processor)
+- word is indexed by memory address (aka memory pointer or memory reference)
+-in modern computer, moving from one cell to another takes no time at all
+
+# Data Structures I
+
+## Arrays and Stacks
+
+### Intro to Arrays
+
+- array: seq of elements of same type stored in contiguous block of memory
+- most space efficeient, also fastest method via indexing
+
+### Dynamic Arrays
+
+- resize array: os requests new size bytes of memory, copies old values, writes new value into last slot and frees old memory
+- can overallocate mem to trade space for speed
