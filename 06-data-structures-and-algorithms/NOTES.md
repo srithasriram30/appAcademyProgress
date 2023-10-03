@@ -84,3 +84,71 @@
 
 - resize array: os requests new size bytes of memory, copies old values, writes new value into last slot and frees old memory
 - can overallocate mem to trade space for speed
+
+### Stacks
+
+- abstract data type, no specific implementation req
+- uses LIFO
+- push and pop to add and remove elements
+- implemented w/ array data structure
+
+code:
+class Stack {
+    constructor() {
+        this.data = [];
+    }
+
+    push(value) {
+        this.data.push(value);
+    }
+
+    pop() {
+        return this.data.pop();
+    }
+
+    size() {
+        return this.data.length;
+    }
+}
+
+- performance depends on implementation
+
+# Data Structures I
+
+## Linked Lists and Queues
+
+### Linked Lists
+
+- linked list: ordered seq of nodes; each node consists of a data val and a pointer to the next node
+
+code:
+class LinkedListNode {
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+}
+
+- linked list itself is a pointer to the first node (called head node)
+- list continues until it reaches a null node
+- if head pointer is null => list is empty
+
+- creation of nodes should be abstrcted away by linked list data structure
+
+- time complexity of adding to head node: O(n)
+
+- nodes not required to be in contiguous blocks
+
+- traversing linked list: O(n)
+
+### Linked Lists Optimization
+
+- requires n nodes to store n values: space complexity O(n)
+- addToHead: O(1)
+- traversel: O(n)
+- addToTail: O(N)
+- addToTail can be improved with a tail pointer; O(1) time complexity; but code is slightly more complicated
+- removeFromHead => point head to second node
+- remove from tail: no way to find previous node; but can check if a node is the second last one in list (`node.next.next === null`) => O(n) operation
+- Optimise: Doubly linked list; add a previous pointer to `LinkesListNode`; removeFromTail is O(1)
+- DoublyLinkedList has mem cost and code complexity
