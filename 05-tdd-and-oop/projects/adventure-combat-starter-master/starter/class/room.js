@@ -52,23 +52,27 @@ class Room {
   }
 
   getItemByName(name) {
-
-    return this.items.filter( item => {
-      return item.name = name;
-  })[0];
-
+    let thisItem;
+    this.items.forEach((item, index) => {
+      if (item.name == name) thisItem = this.items.splice(index, 1)[0];
+    });
+    return thisItem;
   }
 
   getEnemyByName(name) {
+    let thisEnemy;
+    let enemies = this.getEnemies();
+    enemies.forEach(enemy => {
+      if (enemy.name === name) thisEnemy = enemy;
+    })
+    return thisEnemy;
+  }
 
-    // Fill this in
-    let enemies = getEnemies();
-    return enemies.filter( enemy => {
-      return enemy.name = name;
-  })[0];
+  addItem(item) {
+    this.items.push(item);
+  }
+}
 
-}
-}
 module.exports = {
   Room,
 };
