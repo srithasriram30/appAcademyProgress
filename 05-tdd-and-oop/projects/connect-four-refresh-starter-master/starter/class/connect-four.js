@@ -34,12 +34,11 @@ class ConnectFour {
 
   static checkWin(grid) {
 
-    // Return 'X' if player X wins
-    // Return 'O' if player O wins
-    // Return 'T' if the game is a tie
-    // Return false if the game has not ended
+
 
   }
+
+
 
   static endGame(winner) {
     if (winner === 'O' || winner === 'X') {
