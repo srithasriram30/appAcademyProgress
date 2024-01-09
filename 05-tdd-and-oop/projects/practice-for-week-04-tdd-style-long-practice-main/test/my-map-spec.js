@@ -26,13 +26,11 @@ describe("myMap", ()=>{
       });
 
 
-    it("callback should be invoked once for each element", () => {
-        let arrLen = array.length;
-        const cbFn = chai.spy(cb);
-
-        expect(cbFn).to.have.been.called.exactly(arrLen);
-
-    });
+      it("call the passed callback once for each element in the passed-in array argument", function () {
+        const sqrtSpy = chai.spy.on(Math, 'sqrt', () => { });
+        myMap([100, 25, 81, 64], Math.sqrt);
+        expect(sqrtSpy).to.have.been.called.exactly(4);
+      });
 
 
-});
+});// Your code here

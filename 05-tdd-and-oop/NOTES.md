@@ -306,4 +306,6 @@ console.log(fellowshipOfTheRing.getInformation());
 
 ## Custom Errors and ES5 Classes
 
-###
+### Custom Error Types
+
+- can create new error types by extending an existing one.
