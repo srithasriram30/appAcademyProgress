@@ -7,9 +7,9 @@ class TTT {
 
     this.playerTurn = "O";
 
-    this.grid = [[' ', ' ', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', ' ']];
+    this.grid = [[' ',' ',' '],
+                 [' ',' ',' '],
+                 [' ',' ',' ']]
 
     this.cursor = new Cursor(3, 3);
 
@@ -17,86 +17,96 @@ class TTT {
     Screen.initialize(3, 3);
     Screen.setGridlines(true);
 
-    // Replace this with real commands
-    Screen.addCommand('t', 'test command (remove)', TTT.testCommand);
+    this.cursor.setBackgroundColor(0,0,"yellow");
 
-    Screen.render();
+    // Replace this with real commands
+   //Screen.addCommand('t', 'test command (remove)', TTT.testCommand);
+      Screen.addCommand("z", "Move cursor left", TTT.moveLeft);
+      Screen.addCommand("c", "Move cursor right", TTT.moveRight);
+  //  Screen.addCommand("a", "Move cursor up", this.cursor.up);
+  //  Screen.addCommand("x", "Move cursor down", this.cursor.down);
+
+   Screen.render();
   }
 
-  /**
-   * It checks if the game is over, and if so, returns the winner
-   * 
-   * Args:
-   *   grid: a 2D array of strings representing the game board.
-   * 
-   * Returns:
-   *   the winner of the game.
-   */
+
+  // Remove this
+  // static testCommand() {
+  //   console.log("TEST COMMAND");
+  // }
+  static moveLeft(){
+   this.cursor = new Cursor(3, 3);
+    let row = this.cursor.row;
+    let col = this.cursor.col;
+
+    console.log("col before: "+ col);
+    this.cursor.left();
+    
+    console.log("col after: "+ col);
+    
+    Screen.setBackgroundColor(row, col+1, "black")
+    Screen.setBackgroundColor(row, col, "green")
+  }
+
+  static moveRight() {
+   this.cursor = new Cursor(3, 3);
+   let row = this.cursor.row;
+   let col = this.cursor.col;
+
+   console.log("col before: "+ col);
+   this.cursor.right();
+   
+   console.log("col after: "+ col);
+    Screen.setBackgroundColor(row, col-1, "black")
+    Screen.setBackgroundColor(row, col, "green")
+  }
+
   static checkWin(grid) {
 
+       let hWinner = this.horizontalWins(grid);
+      //  console.log("hWinner: "+hWinner);
+        let vWinner =  this.verticalWins(grid);
+       // console.log("vWinner: "+vWinner);
+        let dWinner = this.diagonalWins(grid);
+      //  console.log("dWinner: "+dWinner);
+        let gridFull = this.checkFullGrid(grid);
+        let gridEmpty = this.isEmptyGrid(grid);
 
-    /**
-     * We first create a copy of the input matrix, then we transpose the matrix by swapping the rows
-     * and columns, then we reverse each row
-     * 
-     * Used for ease of computing vertical match.
-     * 
-     * Returns:
-     *   A new matrix with the rows reversed.
-     */
-    const rotate = input => {
-      const matrix = JSON.parse(JSON.stringify(input));
-      for (let row = 0; row < matrix.length; row++) {
-        for (let column = 0; column < row; column++) {
-          let temp = matrix[row][column]
-          matrix[row][column] = matrix[column][row]
-          matrix[column][row] = temp
+    if(gridEmpty){
+      return false;
+    } else if(!gridEmpty && !gridFull && !hWinner && !vWinner && !dWinner){ 
+      return false;
+    }else {
+ 
+
+        if(hWinner === 'X'){
+          return 'X'
+        } else if(hWinner === 'O'){
+          return 'O';
         }
-      }
-      return matrix.map(row => row.reverse());
+
+        if(vWinner === 'X'){
+          return 'X'
+        } else if(vWinner === 'O'){
+          return 'O';
+        }
+
+        if(dWinner === 'X'){
+          return 'X'
+        } else if(dWinner === 'O'){
+          return 'O';
+        }
+
+        if(gridFull && !hWinner && !vWinner && !dWinner){
+          return 'T';
+        }
     }
 
-    // blank grid
-    if (grid.every(row => row.every(el => el === " ") === true)) return false;
-
-    // horizontal match
-    const match = row => row.every(col => col === row[0] && row[0] !== " ");
-    const horizontalMatch = grid.find(match);
-    if (Array.isArray(horizontalMatch) && horizontalMatch.length > 0) return horizontalMatch[0];
-
-    // vertical match
-    // note the grid rotate so we can use the same calculation as horizontal
-    const rotatedGrid = rotate(grid);
-    const verticalMatch = rotatedGrid.find(match);
-    if (Array.isArray(verticalMatch) && verticalMatch.length > 0) return verticalMatch[0];
-
-    // diagonal match
-    // check both left and right diagonal
-    const leftDiagonalMatch = () =>
-      (grid[0][0] === grid[1][1] && grid[0][0] === grid[2][2])
-        ? grid[0][0]
-        : false;
-    const rightDiagonalMatch = () =>
-      (grid[0][2] === grid[1][1] && grid[0][2] === grid[2][0])
-        ? grid[0][2]
-        : false;
-    const left = leftDiagonalMatch();
-    if (left !== false) return left;
-    const right = rightDiagonalMatch();
-    if (right !== false) return right;
-
-    // Tie
-    if (grid.every(row => row.every(el => el !== " ") === true)) return 'T';
-
-    // No one has won, yet
-    return false;
-
-    // Return 'X' if player X wins
-    // Return 'O' if player O wins
-    // Return 'T' if the game is a tie
-    // Return false if the game has not ended
+    
 
   }
+
+
 
   static endGame(winner) {
     if (winner === 'O' || winner === 'X') {
@@ -110,6 +120,79 @@ class TTT {
     Screen.quit();
   }
 
+
+
+  static isEmptyGrid = (grid) => {
+
+    let empty = true;
+    grid.forEach(row => {
+      row.forEach(cell => {
+        if(cell !== ' '){
+          empty= false;
+        }
+      });
+    });
+
+    return empty
+  }
+
+  static checkFullGrid = (grid) => {
+    let full = true;
+    grid.forEach(row => {
+      row.forEach(cell => {
+        if(cell === ' '){
+          full= false;
+        }
+      });
+    });
+    return full;
+  }
+  
+  static horizontalWins = (grid) => {
+    let winner = false;
+    for(let i=0; i<grid.length;i++){
+      let row = grid[i];
+        
+        if((row[0] === row[1]) &&(row[1] === row[2]) && row[0] !== ' ' ){
+          winner = row[0];
+          break;
+        }
+    }
+  
+    return winner;
+  }
+
+  static verticalWins = (grid) => {
+    let winner = false;
+
+    let row = grid[0];
+
+    for(let j=0; j<row.length; j++){
+      
+      if(row[j] !== ' ' && (grid[0][j] === grid[1][j]) && (grid[1][j] === grid[2][j])){
+        winner = row[j];
+        break;
+      }
+    }
+  
+    return winner;
+  }
+
+  static diagonalWins = (grid) => {
+    let winner = false;
+
+    let diag1 = grid[0][0] === grid[1][1] && grid[1][1] === grid[2][2];
+    let diag2 = grid[0][2] === grid[1][1] && grid[1][1] === grid[2][0];
+
+    if((grid[0][0] !== ' ' &&diag1) || (grid[0][2] !==' ' && diag2) ){
+      winner = grid[1][1];
+    }
+
+
+    return winner;
+  }
+
 }
 
 module.exports = TTT;
+
