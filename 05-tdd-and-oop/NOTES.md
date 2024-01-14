@@ -309,3 +309,29 @@ console.log(fellowshipOfTheRing.getInformation());
 ### Custom Error Types
 
 - can create new error types by extending an existing one.
+
+### ES5 Classes
+
+- ES6: use `class` syntax
+- ES5: use plain fn declaration that acts as `constructor` fn
+
+eg:
+
+function Book(title, series, author) {
+  this.title = title;
+  this.series = series;
+  this.author = author;
+}
+
+const gobletOfFire = new Book(
+  'The Goblet of Fire',
+  'Harry Potter',
+  'J.K. Rowling'
+);
+console.log(gobletOfFire.title); // The Goblet of Fire
+
+- name of constructor fn is capitalised
+- fn doesn't explicity return a value
+- `this` refers to newly created object
+
+- Monkey patching => changing the existing behaviour of a class after it's been defined
