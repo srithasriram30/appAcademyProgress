@@ -17,16 +17,49 @@ class TTT {
     Screen.initialize(3, 3);
     Screen.setGridlines(true);
 
-    // Replace this with real commands
-   // Screen.addCommand('t', 'test command (remove)', TTT.testCommand);
+    this.cursor.setBackgroundColor(0,0,"yellow");
 
-    Screen.render();
+    // Replace this with real commands
+   //Screen.addCommand('t', 'test command (remove)', TTT.testCommand);
+      Screen.addCommand("z", "Move cursor left", TTT.moveLeft);
+      Screen.addCommand("c", "Move cursor right", TTT.moveRight);
+  //  Screen.addCommand("a", "Move cursor up", this.cursor.up);
+  //  Screen.addCommand("x", "Move cursor down", this.cursor.down);
+
+   Screen.render();
   }
+
 
   // Remove this
   // static testCommand() {
   //   console.log("TEST COMMAND");
   // }
+  static moveLeft(){
+   this.cursor = new Cursor(3, 3);
+    let row = this.cursor.row;
+    let col = this.cursor.col;
+
+    console.log("col before: "+ col);
+    this.cursor.left();
+    
+    console.log("col after: "+ col);
+    
+    Screen.setBackgroundColor(row, col+1, "black")
+    Screen.setBackgroundColor(row, col, "green")
+  }
+
+  static moveRight() {
+   this.cursor = new Cursor(3, 3);
+   let row = this.cursor.row;
+   let col = this.cursor.col;
+
+   console.log("col before: "+ col);
+   this.cursor.right();
+   
+   console.log("col after: "+ col);
+    Screen.setBackgroundColor(row, col-1, "black")
+    Screen.setBackgroundColor(row, col, "green")
+  }
 
   static checkWin(grid) {
 

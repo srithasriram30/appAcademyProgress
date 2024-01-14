@@ -42,6 +42,7 @@ class Cursor {
     if(this.col > 0){
       this.col --;
     }
+
   }
 
   right() {
