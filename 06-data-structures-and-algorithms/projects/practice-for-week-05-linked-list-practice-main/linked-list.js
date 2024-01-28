@@ -18,27 +18,32 @@ class LinkedList {
     const newNode = new LinkedListNode(val, null);
     newNode.next = this.head;
     this.head = newNode;
+    if(this.tail === null){
+      this.tail = this.head;
+    }
     this.length++;
-
+    
+    return this.head;
   }
 
   addToTail(val) {
-
-    let newNode = new LinkedListNode(val, null);
-    let currentNode;
-    if(this.head === null){
-      this.head = newNode;
-    } else {
-      currentNode = this.head;
-      while(currentNode.next){
-        currentNode = currentNode.next;
+      let newNode = new SinglyLinkedNode(val);
+      this.tail = newNode;
+      let currentNode;
+      if(this.head === null){
+        this.head = newNode;
+      } else {
+        currentNode = this.head;
+        while(currentNode.next){
+          currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
       }
-      currentNode.next = newNode;
+
+      this.length++; 
+
+      return this;
     }
-
-    this.length++;
-
-  }
 
   // You can use this function to help debug
   print() {
