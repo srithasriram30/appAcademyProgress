@@ -152,3 +152,99 @@ class LinkedListNode {
 - remove from tail: no way to find previous node; but can check if a node is the second last one in list (`node.next.next === null`) => O(n) operation
 - Optimise: Doubly linked list; add a previous pointer to `LinkesListNode`; removeFromTail is O(1)
 - DoublyLinkedList has mem cost and code complexity
+
+## Time Complexity
+
+### Caching
+
+- Most commona nd impactful methods to increase code performance
+- For slow, frequenty used calculation: calculate once & store result
+- Pure fn => result depends only on i/p; can be cached with i/p as key
+- For pure fn that can also be defined recursively => dynamic cache can be used to calculate any sub-problem in constant time
+- Creating a running log of past calculations in recursive fn => memonization
+- Building cache from bottom up => tabulation
+- Memonisation & tabulation => forms of dynamic programming
+
+### Memonization of Fibonacci
+
+- Memonization => design pattern used to reduce overall no of calculations that can occur in algorithms that use recursive strategies to solve
+- Two features:
+    - Fn is recursive
+    - additional data structure used is typically an object
+- Trade-off between time and memory used
+- Memonization is useful when attacking recursive problems that have many overlapping sub-problems
+
+### Tabulation of Fibonacci
+
+- Two main features:
+    - function is iterative
+    - additional data structure used is typically an array
+
+# Data Structures II
+
+## Hash Tables and Sets
+
+### Hash Functions
+
+- A hash fn maps aribitary data to a deterministic, fixed-sized output.
+- Will always return the same o/p for a given i/p
+- SHA algorithm is normally used
+
+### Hash Tables
+
+- Hash tables (sometimes known as hash maps) are arguably most important data structure
+- Hash table is an array of elements indexed by a hash key. Key hash is then run through a modulo fn which converts it into an array index
+- 1st step: initialize an array of fixed size for data storage
+- Each slot is called 'bucket' and initialized to null
+- Next, hash fn which converts keys to integers
+`
+function hash(str) {
+  let hashValue = 0;
+
+  for (let i = 0 ; i < str.length ; i++) {
+    hashValue += str.charCodeAt(i);
+  }
+
+  return hashValue;
+}
+`
+- Finally, a fn to convert key hash into a valid array index
+
+`
+function hashMod(key) {
+  return hash(key) % data.length;
+}
+`
+
+- To insert into a hash table, you can create a new class for KeyValue data
+
+`class KeyValuePair {
+  constructor(key, value) {
+    this.key = key;
+    this.value = value;
+  }
+}`
+
+- To retrieve, use the hashMod method to get the key
+
+- Hashing is technically O(n) where n is the size of the key; but if n is reasoably sized (< 1000) it is O(1)
+- Searching is also O(1)
+
+### Hash Table Collisions
+
+- Hash collisons : if two hash values are the same, but have different keys => newer one will overwrite the old one
+- Probablility of hash collisons can be reduced ( prob is 1/buckets.length), but can not be eleminated
+- One solution: allow multiple key/value pairs to reside in same bucket => add next pointer to eaxh keyValuePair and treat it as nodes in linked list
+- Performance is O(n) where n is no of collisons
+O(n) is worst case, but average is O(1)
+- Can also increase array size
+
+### Sets
+
+- set: abstract data type used to store unique, unordered values
+- three important properties:
+  - no duplicate elements
+  - elements are unordered
+  - can check if element is contained in O(1) time
+
+- usually implemented using hash tables
