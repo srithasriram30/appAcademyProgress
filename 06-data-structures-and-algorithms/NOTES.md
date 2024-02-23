@@ -248,3 +248,21 @@ O(n) is worst case, but average is O(1)
   - can check if element is contained in O(1) time
 
 - usually implemented using hash tables
+
+# Sorting
+
+## Basic Sorting
+
+### Intro to Sorting
+
+- can swap two variables using tmp, or destructuring (`[arr[4],arr[6] = [arr[6],arr[4]]`)
+
+### Bubble Sort
+
+- simple sorting alorithm
+- Steps:
+
+    1) Iterate through the array
+    2) If the current value is greater than its neighbor to the right, swap those values
+    3) If you get to the end of the array and no swaps have occurred, return
+    4) Otherwise, repeat from the beginning
