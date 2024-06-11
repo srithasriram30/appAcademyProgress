@@ -266,3 +266,15 @@ O(n) is worst case, but average is O(1)
     2) If the current value is greater than its neighbor to the right, swap those values
     3) If you get to the end of the array and no swaps have occurred, return
     4) Otherwise, repeat from the beginning
+
+### Insertion Sort
+
+- pick elements from right side and move to left one-by-one, inserting into correct position
+
+- Steps:
+
+
+    1) Divide the array into sorted and unsorted
+    2) Pick and remove a value from the unsorted
+    3) Insert it into the correct place in the sorted
+    4) Repeat this until unsorted is empty and sorted is full
