@@ -278,3 +278,13 @@ O(n) is worst case, but average is O(1)
     2) Pick and remove a value from the unsorted
     3) Insert it into the correct place in the sorted
     4) Repeat this until unsorted is empty and sorted is full
+### Selection Sort
+
+- Steps:
+ 
+    1) Divide the array into sorted and unsorted
+    2) Find and remove the smallest value from the unsorted
+    3) Add this value to the end of the sorted array
+    4) Repeat this until unsorted is empty and sorted is full
+
+### Recursive sorting
