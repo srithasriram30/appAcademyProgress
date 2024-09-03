@@ -288,3 +288,35 @@ O(n) is worst case, but average is O(1)
     4) Repeat this until unsorted is empty and sorted is full
 
 ### Recursive sorting
+
+- Three traits;
+  - Fn calls itself recurrsively
+  - base case where recursion ends
+  - state moves towards base case w/ each call 
+
+- Time complexity: O(n^2)
+- Space complexity: O(n)
+
+## Intermediate sorting
+
+### Merge Sort
+
+- Uses divide & conquer approach
+  1) Split unsorted array in half
+  2) sort halves
+  3) merge newly sorted halves
+
+- Time complexity: O(n log n) 
+- Space complexity: In place => O(1)
+
+### Quicksort 
+
+
+   1) Pick a value in the array to serve as the pivot
+   2) Partition the array so that values smaller than the pivot are on the left and values larger than the pivot are on the right
+   3) Sort the left and the right partitions
+   4) Return an array with left, pivot, and right values
+
+- Also calls itself recursively
+- Time complexity: O(n log n)
+- Space complexity: O(n log n), o(1) for in-place
