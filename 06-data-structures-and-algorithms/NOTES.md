@@ -320,3 +320,23 @@ O(n) is worst case, but average is O(1)
 - Also calls itself recursively
 - Time complexity: O(n log n)
 - Space complexity: O(n log n), o(1) for in-place
+
+# Trees and Binary Search
+
+## Trees Basic
+
+### Logarithms
+
+- Inverse of exponent; binary log is a base-2 log
+
+### Binary Search
+
+- Uses divide and conquer
+- Preconditions: 
+  1) Data must be sorted
+  2) Data can be accessed by index in constant time
+- Time complexity: O(log n)
+
+## Binary Search Trees
+
+# Graphs
